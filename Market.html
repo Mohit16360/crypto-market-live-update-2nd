@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  <title>Crypto Market Live</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'poppins', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;/
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .tradingview-widget-container {
+      width: 100%;
+    }
+
+    .tradingview-widget-container__widget {
+      width: 100%;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .surprise-button,
+    .cta-button {
+      padding: 10px 20px;
+      background: linear-gradient(135deg,
+          rgba(191, 57, 137, 1) 0%,
+          rgba(9, 107, 222, 1) 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      color: #fff;
+      /* Text color for normal state */
+    }
+
+    .surprise-button:hover {
+      background-color: #ff960b;
+      background: #ff960b;
+      /* Change the background color on hover */
+      color: #fff;
+      /* Change the text color on hover */
+    }
+
+    .cta-button:hover {
+      background-color: #ff960b;
+      background: #ff960b;
+      /* Change the background color on hover */
+      color: #fff;
+      /* Change the text color on hover */
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Set the image dimensions */
+#popupImage {
+   
+    height: 380px;
+    filter: none; 
+}
+
+/* Add more styles as needed */
+
+
+/* Add more styles as needed */
+
+  </style>
+</head>
+
+<body>
+  <div class="containerr">
+    <nav>
+      <a href="index.html"><img src="./logo.png" class="logo" /></a>
+      <ul>
+        <li><a class="example_d" href="index.html">Home</a></li>
+        <li><a class="example_d" href="#" id="Market">Market</a></li>
+        <li><a class="example_d" href="news.html">News</a></li>
+        <li><a class="example_d" href="#">About</a></li>
+        <li><a class="example_d" href="#contact">Contact</a></li>
+      </ul>
+      <a href="#" class="btn" id="temp">EN</a>
+    </nav>
+
+    <h1 style="text-align: center">Crypto Market Live</h1>
+    <br />
+
+    <div class="container">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright">
+          <a href="https://in.tradingview.com/" rel="noopener nofollow" target="_blank">
+            <span class="blue-text">Track all markets on TradingView</span>
+          </a>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
+          async>
+            {
+              "width": "100%",
+                "height": "490",
+                  "defaultColumn": "overview",
+                    "screener_type": "crypto_mkt",
+                      "displayCurrency": "USD",
+                        "colorTheme": "dark",
+                          "locale": "in",
+                            "isTransparent": false
+            }
+          </script>
+      </div>
+      <div class="button-container">
+        <a href="#" class="surprise-button" id="surpriseButton">Surprise</a>
+        <a href="https://accounts.binance.com/en/register?ref=792225892&gclid=CjwKCAiA3aeqBhBzEiwAxFiOBsh-jpQjvAd6CfcdwqPT62VRSD9zwOXU_9WYzZy711Pdhlji2cA01hoCIN4QAvD_BwE" class="cta-button">Open Account</a>
+      </div>
+    </div>
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+          <span class="close" id="closePopup">×</span>
+          <img src="sur.jpg" alt="Surprise" id="popupImage" />
+      </div>
+  </div>
+
+    <footer class="footer" id="contact">
+      <div class="footer-content">
+        <div class="social-media-icons">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="https://twitter.com/Mohit_064" class="fa fa-twitter"></a>
+          <a href="mailto:mohitcode001@gmail.com" class="fa fa-google"></a>
+          <a
+            href="https://www.linkedin.com/in/mohit-sharma-71b1b524a/"
+            class="fa fa-linkedin"
+          ></a>
+          <a href="https://github.com/Mohit16360" class="fa fa-github"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </div>
+        <p>
+          &copy; 2023 Crypto Market Live and Data provided by TradingView
+          
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
