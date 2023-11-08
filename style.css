@@ -248,6 +248,15 @@ h1 {
     color: white;
 }
 
+.tradingview-widget-copyright {
+    font-size: 13px !important;
+    line-height: 32px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+    color: #B2B5BE !important;
+    display: none !important;
+}
 
 @media (max-width: 768px) {
     /* Add your responsive styles for smaller screens here */
